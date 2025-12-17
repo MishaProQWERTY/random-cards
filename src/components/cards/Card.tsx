@@ -8,12 +8,12 @@ export const Card = () => {
     return (
         <CardRoot>
             <CardTitle onClick={() => toggleDescription(!card.showDescription)}>
-                {card.activeCard?.name}
+                {card.activeCard?.question}
             </CardTitle>
             <CardElementRoot>
                 {card.showDescription &&
                     <CardDescription>
-                        {card.activeCard?.description}
+                        {card.activeCard?.answer}
                     </CardDescription>
                 }
             </CardElementRoot>
@@ -25,20 +25,27 @@ export const CardRoot = styled.div({
     height: '100%',
     display: 'grid',
     gridTemplateRows: '1fr auto',
-    gridTemplateColumns: '1fr',
-    '@media (max-width: 768px)': {
-        gridTemplateRows: '1fr auto',
-    }
+    gap: '20px',
+    padding: '20px 0',
 })
 
 export const CardTitle = styled.h1({
-    color: ' #DDA853',
+    color: '#1E293B',
     display: 'flex',
     alignItems: 'center',
-    margin: 'auto',
+    justifyContent: 'center',
+    margin: '0',
     textAlign: 'center',
-    fontFamily: 'Golos',
+    fontFamily: 'Golos, sans-serif',
     fontSize: '2rem',
+    lineHeight: '1.4',
+    padding: '0 20px',
+    cursor: 'pointer',
+    userSelect: 'none',
+    transition: 'color 0.2s',
+    '&:hover': {
+        color: '#4338CA',
+    },
 })
 
 export const CardElementRoot = styled.div({
@@ -47,20 +54,20 @@ export const CardElementRoot = styled.div({
     overflow: 'hidden',
 })
 
-export const CardButton = styled.button({
-    margin: '15px 0',
-    fontSize: '1.2rem',
-    fontFamily: 'Golos',
-    color: ' rgb(61, 90, 187)',
-    backgroundColor: ' rgba(0, 0, 0, 0)',
-})
-
 export const CardDescription = styled.div({
-    color: ' #183B4E',
+    color: '#475569',
     overflowY: 'auto',
     padding: '0 30px',
-    fontSize: '1.1rem',
+    fontSize: '1.15rem',
+    lineHeight: '1.7',
     textAlign: 'justify',
     textAlignLast: 'center',
-    maxHeight: '300px',
+    maxHeight: '400px',
+    '::-webkit-scrollbar': {
+        width: '8px',
+    },
+    '::-webkit-scrollbar-thumb': {
+        backgroundColor: '#CBD5E1',
+        borderRadius: '4px',
+    },
 })

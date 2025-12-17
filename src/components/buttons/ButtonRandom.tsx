@@ -13,19 +13,25 @@ export const ButtonRandom = () => {
 }
 
 const ButtonRandomRoot = styled.button({
-    width: '200px',
-    padding: '9px 0',
-    borderRadius: '17px',
-    border: '2px solid #27548A',
-    backgroundColor: '#F5EEDC',
-    color: '#27548A',
-    fontFamily: 'Golos',
-    fontWeight: '500',
-    fontSize: '1.5rem',
+    width: '220px',
+    padding: '14px 0',
+    borderRadius: '24px',
+    border: 'none',
+    backgroundColor: '#4338CA',
+    color: '#FFFFFF',
+    fontFamily: 'Golos, sans-serif',
+    fontWeight: '600',
+    fontSize: '1.6rem',
     cursor: 'pointer',
-    transition: 'box-shadow 0.2s ease, filter 0.2s ease',
+    boxShadow: '0 4px 14px rgba(67, 56, 202, 0.3)',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+        backgroundColor: '#3730A3',
+        boxShadow: '0 6px 20px rgba(67, 56, 202, 0.4)',
+        transform: 'translateY(-2px)',
+    },
     '&:active': {
-        filter: 'brightness(0.8)',
-        boxShadow: '0 0 8px rgba(39, 84, 138, 0.6)',
+        transform: 'translateY(0)',
+        boxShadow: '0 2px 8px rgba(67, 56, 202, 0.3)',
     },
 })

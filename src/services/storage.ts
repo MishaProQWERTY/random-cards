@@ -1,8 +1,8 @@
 import data from '../assets/data_cards.json'
 
 export type CardType = {
-    name: string
-    description: string
+    question: string
+    answer: string
 }
 
-export const cards: CardType[] = data.cards
+export const cards: CardType[] = data

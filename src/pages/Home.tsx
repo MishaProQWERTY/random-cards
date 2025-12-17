@@ -1,14 +1,19 @@
 import styled from '@emotion/styled'
-import { ButtonRandom } from '../components/buttons'
+import { ButtonRandom, ModeToggle } from '../components/buttons'
 import { Card } from '../components/cards'
 
 export const Home = () => {
     return (
         <HomeRoot>
             <HomeContainer>
+                <ModeToggleContainer>
+                    <ModeToggle />
+                </ModeToggleContainer>
+
                 <CardContainer>
                     <Card />
                 </CardContainer>
+
                 <ButtonContainer>
                     <ButtonRandom />
                 </ButtonContainer>
@@ -18,29 +23,33 @@ export const Home = () => {
 }
 
 const HomeRoot = styled.main({
-
+    height: '100vh',
+    backgroundColor: '#F8FAFC',
 })
 
 const HomeContainer = styled.div({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
-    backgroundColor: ' #F5EEDC',
+    backgroundColor: '#F8FAFC',
+})
+
+const ModeToggleContainer = styled.div({
+    padding: '24px 0',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
 })
 
 const CardContainer = styled.div({
-    flex: '1 auto',
-    minHeight: '50%',
-    maxHeight: 'calc(100% - 80px)',
+    flex: 1,
+    padding: '0 24px',
     overflowY: 'auto',
 })
 
 const ButtonContainer = styled.div({
-    flex: '1 auto',
+    padding: '32px 0',
     display: 'flex',
-    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    maxHeight: '50%',
-    overflowY: 'auto',
 })
