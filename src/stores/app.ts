@@ -1,5 +1,5 @@
 import { createEvent, createStore, sample } from 'effector'
-import { cards as initialCards, CardType } from '../services/storage'
+import { cards as initialCards, type CardType } from '../services/storage'
 
 export const pickRandomCard = createEvent()
 export const pickNextSequentialCard = createEvent()

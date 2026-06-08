@@ -1,21 +1,9 @@
-import styled from "@emotion/styled"
-import { Outlet } from "react-router-dom"
-import { FontsStyles, GlobalStyles } from "../components"
+import { Outlet } from 'react-router'
 
 export const Root = () => {
     return (
-        <>
-            <FontsStyles />
-            <GlobalStyles />
-            <RootRoot>
-                <Outlet />
-            </RootRoot>
-        </>
+        <div className='grid grid-rows-[1fr] min-h-full'>
+            <Outlet />
+        </div>
     )
 }
-
-const RootRoot = styled.div({
-    display: 'grid',
-    gridTemplateRows: '1fr',
-    minHeight: 'inherit',
-})

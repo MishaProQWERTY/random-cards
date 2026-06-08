@@ -1,73 +1,25 @@
-import styled from '@emotion/styled'
-import { useUnit } from 'effector-react'
-import { $App, toggleDescription } from '../../stores/app'
+import { $App, toggleDescription } from "@/stores/app"
+import { useUnit } from "effector-react"
 
 export const Card = () => {
     const card = useUnit($App)
+    const { activeCard, showDescription } = card
 
     return (
-        <CardRoot>
-            <CardTitle onClick={() => toggleDescription(!card.showDescription)}>
-                {card.activeCard?.question}
-            </CardTitle>
-            <CardElementRoot>
-                {card.showDescription &&
-                    <CardDescription>
-                        {card.activeCard?.answer}
-                    </CardDescription>
-                }
-            </CardElementRoot>
-        </CardRoot>
+        <div className={`h-full grid gap-5 py-5 ${showDescription ? 'grid-rows-[1fr_auto]' : 'grid-rows-[1fr]'}`}>
+            <h1
+                onClick={() => toggleDescription(!showDescription)}
+                className="flex items-center justify-center m-0 text-center font-golos text-2xl sm:text-3xl leading-relaxed px-4 cursor-pointer select-none transition-colors duration-200 hover:text-indigo-600 text-slate-800"
+            >
+                {activeCard?.question}
+            </h1>
+            {showDescription && (
+                <div className="overflow-y-auto max-h-96 px-5 sm:px-8 pb-2">
+                    <div className="font-golos text-slate-600 text-base sm:text-lg leading-7 text-justify sm:text-center">
+                        {activeCard?.answer}
+                    </div>
+                </div>
+            )}
+        </div>
     )
 }
-
-export const CardRoot = styled.div({
-    height: '100%',
-    display: 'grid',
-    gridTemplateRows: '1fr auto',
-    gap: '20px',
-    padding: '20px 0',
-})
-
-export const CardTitle = styled.h1({
-    color: '#1E293B',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: '0',
-    textAlign: 'center',
-    fontFamily: 'Golos, sans-serif',
-    fontSize: '2rem',
-    lineHeight: '1.4',
-    padding: '0 20px',
-    cursor: 'pointer',
-    userSelect: 'none',
-    transition: 'color 0.2s',
-    '&:hover': {
-        color: '#4338CA',
-    },
-})
-
-export const CardElementRoot = styled.div({
-    display: 'flex',
-    flexDirection: 'column',
-    overflow: 'hidden',
-})
-
-export const CardDescription = styled.div({
-    color: '#475569',
-    overflowY: 'auto',
-    padding: '0 30px',
-    fontSize: '1.15rem',
-    lineHeight: '1.7',
-    textAlign: 'justify',
-    textAlignLast: 'center',
-    maxHeight: '400px',
-    '::-webkit-scrollbar': {
-        width: '8px',
-    },
-    '::-webkit-scrollbar-thumb': {
-        backgroundColor: '#CBD5E1',
-        borderRadius: '4px',
-    },
-})

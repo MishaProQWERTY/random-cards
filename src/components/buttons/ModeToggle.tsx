@@ -1,62 +1,24 @@
-import styled from '@emotion/styled'
-import { useUnit } from 'effector-react'
-import { $App, toggleMode } from '../../stores/app'
+import { $App, toggleMode } from "@/stores/app"
+import { useUnit } from "effector-react"
 
 export const ModeToggle = () => {
     const { isSequentialMode } = useUnit($App)
 
     return (
-        <ToggleRoot onClick={() => toggleMode()}>
-            <ToggleLabel>
+        <div
+            onClick={() => toggleMode()}
+            className="flex items-center gap-4 cursor-pointer select-none px-6 py-3 bg-indigo-100 rounded-full transition-all duration-300 hover:bg-indigo-200"
+        >
+            <span className="font-golos text-lg text-indigo-600 font-medium">
                 Режим:{' '}
                 <strong>{isSequentialMode ? 'По порядку' : 'Случайный'}</strong>
-            </ToggleLabel>
-            <ToggleSwitch>
-                <ToggleKnob $active={isSequentialMode} />
-            </ToggleSwitch>
-        </ToggleRoot>
+            </span>
+            <div className="relative w-16 h-8 bg-slate-300 rounded-full transition-colors duration-300">
+                <div
+                    className={`absolute top-1 w-6 h-6 rounded-full shadow-md transition-all duration-300 ${isSequentialMode ? 'left-9 bg-indigo-600' : 'left-1 bg-slate-600'
+                        }`}
+                />
+            </div>
+        </div>
     )
 }
-
-const ToggleRoot = styled.div({
-    display: 'flex',
-    alignItems: 'center',
-    gap: '16px',
-    cursor: 'pointer',
-    userSelect: 'none',
-    padding: '12px 24px',
-    backgroundColor: '#E0E7FF',
-    borderRadius: '50px',
-    transition: 'all 0.3s',
-    '&:hover': {
-        backgroundColor: '#C7D2FE',
-    },
-})
-
-const ToggleLabel = styled.span({
-    fontFamily: 'Golos, sans-serif',
-    fontSize: '1.3rem',
-    color: '#4338CA',
-    fontWeight: '500',
-})
-
-const ToggleSwitch = styled.div({
-    position: 'relative',
-    width: '64px',
-    height: '32px',
-    backgroundColor: '#CBD5E1',
-    borderRadius: '32px',
-    transition: 'background-color 0.3s',
-})
-
-const ToggleKnob = styled.div<{ $active: boolean }>(({ $active }) => ({
-    position: 'absolute',
-    top: '4px',
-    left: $active ? '36px' : '4px',
-    width: '24px',
-    height: '24px',
-    backgroundColor: $active ? '#4338CA' : '#64748B',
-    borderRadius: '50%',
-    transition: 'all 0.3s ease',
-    boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
-}))

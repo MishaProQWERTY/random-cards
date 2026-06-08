@@ -1,23 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import path from 'path'
 
-// See https://vitejs.dev/config/
 export default defineConfig({
     server: {
         host: true,
         open: true,
-        port: 5173,
     },
-    plugins: [
-        react({
-            jsxImportSource: "@emotion/react",
-            babel: {
-                plugins: ["@emotion/babel-plugin"],
-            },
-        })
-    ],
+    plugins: [react(), tailwindcss()],
     base: '/random-cards/',
     build: {
         outDir: 'docs',
+    },
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        },
     },
 })

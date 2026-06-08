@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Golos';
+    src: url('@/assets/fonts/GolosText-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos';
+    src: url('@/assets/fonts/GolosText-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Golos';
+    src: url('@/assets/fonts/GolosText-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@theme {
+    --font-golos: 'Golos', sans-serif;
+}
+
+html {
+    font-family: "IBM Plex Mono", 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    min-height: inherit;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    border: 4px solid transparent;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-clip: content-box;
+    min-height: 60px;
+}

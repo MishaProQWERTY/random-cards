@@ -1,7 +1,9 @@
 {
     "name": "random-cards",
-    "private": true,
-    "version": "0.0.0",
+    "version": "1.0.0",
+    "author": {
+        "name": "Mikhail Kuznetsov"
+    },
     "type": "module",
     "scripts": {
         "dev": "vite",
@@ -9,17 +11,15 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@emotion/react": "^11.14.0",
-        "@emotion/styled": "^11.14.0",
+        "@tailwindcss/vite": "^4.3.0",
         "effector": "^23.3.0",
         "effector-react": "^23.3.0",
-        "normalize.css": "^8.0.1",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
-        "react-router-dom": "^7.6.0"
+        "react-router": "^7.17.0",
+        "tailwindcss": "^4.3.0"
     },
     "devDependencies": {
-        "@types/culori": "^4.0.0",
         "@types/node": "^22.15.17",
         "@types/react": "^19.1.2",
         "@types/react-dom": "^19.1.2",
