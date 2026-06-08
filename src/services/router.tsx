@@ -1,4 +1,4 @@
-import { Index } from "../pages/Index"
+import { Index } from "@/pages/Index"
 import { Home } from "../pages/Home"
 import { Root } from "../pages/Root"
 import { createBrowserRouter } from "react-router"
@@ -9,12 +9,12 @@ export const router = createBrowserRouter([
         element: <Root />,
         children: [
             {
-                index: true,
-                element: <Index />,
+                path: '/',
+                element: <Home />,
             },
             {
-                path: '/random',
-                element: <Home />,
+                path: '*',
+                element: <Index />
             },
         ]
     }

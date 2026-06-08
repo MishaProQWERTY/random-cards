@@ -2,7 +2,7 @@ import { ButtonRandom, ModeToggle } from "@/components/buttons"
 import { Card } from "@/components/cards"
 
 export const Home = () => (
-    <main className="min-h-screen flex flex-col bg-slate-50">
+    <main className="h-full flex flex-col bg-slate-50">
         <div className="py-6 flex justify-center">
             <ModeToggle />
         </div>
@@ -13,7 +13,7 @@ export const Home = () => (
             </div>
         </div>
 
-        <div className="py-8 flex justify-center">
+        <div className="py-3 flex justify-center">
             <ButtonRandom />
         </div>
     </main>
