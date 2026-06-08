@@ -1,12 +1,12 @@
 import { Outlet } from 'react-router'
 
-export const Root = () => {
-    return (
-        <div className="grid grid-rows-[1fr_auto] min-h-dvh">
+export const Root = () => (
+    <div className="flex flex-col h-screen overflow-hidden">
+        <div className="flex-1 overflow-hidden">
             <Outlet />
-            <footer className="py-2 text-center text-sm text-slate-400 font-golos">
-                @mikesmth {new Date().getFullYear()}
-            </footer>
         </div>
-    )
-}
+        <footer className="py-2 text-center text-sm text-slate-400 font-golos shrink-0">
+            @mikesmth {new Date().getFullYear()}
+        </footer>
+    </div>
+)
