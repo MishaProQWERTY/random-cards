@@ -25,23 +25,6 @@
     --font-golos: 'Golos', sans-serif;
 }
 
-html {
-    font-family: "IBM Plex Mono", 'Courier New', Courier, monospace;
-    height: 100%;
-}
-
-body {
-    height: 100dvh;
-    margin: 0;
-    overflow: hidden;
-    overscroll-behavior: none;
-}
-
-#root {
-    height: 100%;
-    overflow: hidden;
-}
-
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
