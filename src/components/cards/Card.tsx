@@ -29,7 +29,7 @@ export const Card = () => {
                         {activeCard?.question}
                     </h1>
                     <div className="flex-1 overflow-y-auto px-4 sm:px-8 pb-2 min-h-0">
-                        <div className="font-golos text-slate-600 text-base sm:text-lg leading-7 text-justify sm:text-center">
+                        <div className="font-golos text-slate-600 text-base sm:text-lg leading-7 text-justify sm:text-center whitespace-pre-line">
                             {activeCard?.answer}
                         </div>
                     </div>
